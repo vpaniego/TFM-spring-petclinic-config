@@ -1,0 +1,20 @@
+﻿vets:
+  cache:
+    ttl: 60
+    heap-size: 100
+
+---
+spring:
+  profiles: default
+
+---
+spring:
+  profiles: docker
+  zipkin:
+    baseUrl: http://tfm-tracing-server-service:9411
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: false
+server:
+  port: 8083

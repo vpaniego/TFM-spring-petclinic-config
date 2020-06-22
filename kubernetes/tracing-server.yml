@@ -1,0 +1,10 @@
+server:
+  port: 9411
+
+---
+spring:
+  profiles: default
+
+---
+spring:
+  profiles: docker
