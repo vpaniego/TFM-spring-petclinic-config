@@ -1,0 +1,20 @@
+server:
+  port: 9100
+---
+spring:
+  profiles: docker
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
+        all-namespaces: true
+        service-labels:
+          type: tfm
+      catalog-services-watch:
+        enabled: true
+        catalogServicesWatchDelay: 10000
+
+logging:
+  level:
+    org.springframework.cloud.kubernetes: TRACE
+    de.codecentric.boot.admin.discovery.ApplicationDiscoveryListener: DEBUG
